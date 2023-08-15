@@ -1,0 +1,103 @@
+add_filter( 'woocommerce_countries',  'rs_edit_pk_country' );
+function rs_edit_pk_country ( $countries ) {
+  $new_countries = array(
+	                    'PK'  => __( 'Pakistan', 'woocommerce' ),
+	                    );
+
+	return array_merge( $countries, $new_countries );
+}
+
+add_filter( 'woocommerce_continents', 'rs_add_new_pk_country_to_continents' );
+function rs_add_new_pk_country_to_continents ( $continents ) {
+	$continents['AS']['countries'][] = 'PK';
+	return $continents;
+}
+
+
+add_filter( 'woocommerce_states', 'custom_wc_states_pk' );
+
+function custom_wc_states_pk ( $states ) {
+
+  $states['PK'] = array(
+
+  		'Azad Kashmir' => 'Azad Kashmir',
+
+	    'Quetta' => 'Quetta',
+	    'Khuzdar' => 'Khuzdar',
+
+	    'FATA' => 'FATA',
+
+	    'Gilgit Baltistan' => 'Gilgit Baltistan',
+
+	    'Islamabad' => 'Islamabad',
+
+	    'Peshawar' => 'Peshawar',
+        'Mardan' => 'Mardan',
+        'Mingora' => 'Mingora',
+        'Kohat' => 'Kohat',
+        'Abbottabad' => 'Abbottabad',
+        'Dera Ismail Khan' => 'Dera Ismail Khan',
+        'Nowshera' => 'Nowshera',
+        'Charsada' => 'Charsada',
+        'Swabi ' => 'Swabi ',
+
+    	'Lahore' => 'Lahore',
+        'Faisalabad' => 'Faisalabad',
+        'Rawalpindi' => 'Rawalpindi',
+        'Multan' => 'Multan',
+        'Gujranwala' => 'Gujranwala',
+        'Sargodha' => 'Sargodha',
+        'Sialkot' => 'Sialkot',
+        'Sheikhupura' => 'Sheikhupura',
+        'Gujrat' => 'Gujrat',
+        'Kasur' => 'Kasur',
+        'Rahim Yar Khan' => 'Rahim Yar Khan',
+        'Sahiwal' => 'Sahiwal',
+        'Okara' => 'Okara',
+        'Wah Cantonment ' => 'Wah Cantonment ',
+        'Dera Chazi Khan' => 'Dera Chazi Khan',
+        'Chiniot' => 'Chiniot',
+        'Kamoke' => 'Kamoke',
+        'Burewala' => 'Burewala',
+        'Jhelum' => 'Jhelum',
+        'Sadiqabad' => 'Sadiqabad',
+        'Khanewal' => 'Khanewal',
+        'Hafizabad' => 'Hafizabad',
+        'Khanpur' => 'Khanpur',
+        'Gojra' => 'Gojra',
+        'Bahawalnagar' => 'Bahawalnagar',
+        'Muridke' => 'Muridke',
+        'Pakpattan' => 'Pakpattan',
+        'Jaranwala' => 'Jaranwala',
+        'Chishtian' => 'Chishtian',
+        'Daska' => 'Daska',
+        'Mandi Bahauddin' => 'Mandi Bahauddin',
+        'Ahmadpur East ' => 'Ahmadpur East ',
+        'Kamalia' => 'Kamalia',
+        'Vehari' => 'Vehari',
+        'Wazirabad' => 'Wazirabad',
+        'Khushab' => 'Khushab',
+        'Chakwal' => 'Chakwal',
+        'Mianwali' => 'Mianwali',
+        'Kot Adu' => 'Kot Adu',
+        'Farooka' => 'Farooka',
+        'Chichawatni' => 'Chichawatni',
+
+        'Karachi' => 'Karachi',
+        'Hyderabad' => 'Hyderabad',
+        'Sukkur' => 'Sukkur',
+        'Kandhkot' => 'Kandhkot',
+        'Larkana' => 'Larkana',
+        'Mirpur Khas' => 'Mirpur Khas',
+        'Nawabshah' => 'Nawabshah',
+        'Jacobabad' => 'Jacobabad',
+        'Shikapur' => 'Shikapur',
+        'Tando Adam' => 'Tando Adam',
+        'Khairpur' => 'Khairpur',
+        'Dadu' => 'Dadu',
+        'Tando Allahyar' => 'Tando Allahyar',
+
+ );
+
+  return $states;
+}
